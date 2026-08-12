@@ -1,0 +1,27 @@
+body
+{ 
+    text-align: center;
+
+    text-shadow: 5px 5px 7px rgb(16, 104, 163);
+    
+
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+h1{ 
+    color: rgb(67, 146, 243);
+    text-align: center;
+}
+p {
+    color: rgb(116, 176, 255);
+    text-align: left;
+} 
+
+h2{
+    color: rgb(7, 71, 122);
+    text-align: center
+}
