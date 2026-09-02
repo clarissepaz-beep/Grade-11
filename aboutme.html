@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #030308;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* ===== BACKGROUND ===== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: #7c3aed;
+            filter: blur(180px);
+            opacity: .15;
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: #06b6d4;
+            filter: blur(180px);
+            opacity: .1;
+            bottom: -150px;
+            right: -150px;
+            z-index: -1;
+        }
+
+        /* ===== NAVBAR ===== */
+
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            padding: 15px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(20, 20, 35, .75);
+            backdrop-filter: blur(15px);
+
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 50px;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #a78bfa;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ddd;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #a78bfa;
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 8% 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .small-title {
+            color: #a78bfa;
+            letter-spacing: 3px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: .95;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #a78bfa, #22d3ee);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #6d5dfc;
+            transition: .3s;
+        }
+
+        .btn.primary {
+            background: linear-gradient(90deg, #7c3aed, #06b6d4);
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(124,58,237,.3);
+        }
+
+        /* ===== OWNER PHOTO ===== */
+
+        .profile-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            flex-shrink: 0;
+        }
+
+        .profile-container::before {
+            content: "";
+            position: absolute;
+            inset: -15px;
+            border: 2px solid #8b5cf6;
+            border-radius: 50%;
+            animation: rotate 8s linear infinite;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid #151528;
+            box-shadow: 0 0 60px rgba(124,58,237,.45);
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 15px;
+            right: -30px;
+            background: #151528;
+            padding: 12px 18px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ===== SECTIONS ===== */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            color: #22d3ee;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* ===== ABOUT ===== */
+
+        .about {
+            max-width: 1000px;
+            margin: auto;
+            padding: 35px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 25px;
+            line-height: 1.8;
+            color: #bbb;
+        }
+
+        .about strong {
+            color: white;
+        }
+
+        /* ===== HOBBIES & INTERESTS ===== */
+
+        .hobbies-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hobbies-photo {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(139, 92, 246, .25);
+        }
+
+        .hobbies-photo img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hobbies-content {
+            display: grid;
+            gap: 30px;
+        }
+
+        .hobby-box, .favorite-box {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 18px;
+            padding: 30px;
+            transition: .3s;
+        }
+
+        .hobby-box:hover, .favorite-box:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, .08);
+        }
+
+        .hobby-box h3, .favorite-box h3 {
+            color: #22d3ee;
+            margin-bottom: 15px;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .hobby-list, .favorite-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .hobby-item, .favorite-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #bbb;
+            font-size: 15px;
+        }
+
+        .hobby-item::before, .favorite-item::before {
+            content: "✨";
+            font-size: 18px;
+        }
+
+        @media(max-width: 900px) {
+            .hobbies-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hobbies-photo img {
+                height: 300px;
+            }
+        }
+
+        /* ===== PROJECTS ===== */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            color: inherit;
+            background: #111222;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 22px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: .4s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            border-color: #8b5cf6;
+            box-shadow: 0 20px 50px rgba(0,0,0,.4);
+        }
+
+        .project img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .project:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #999;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 12px;
+            background: rgba(139,92,246,.15);
+            color: #a78bfa;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* ===== SKILLS ===== */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            padding: 30px 20px;
+            text-align: center;
+            background: #111222;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,.08);
+            transition: .3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            background: #17172c;
+        }
+
+        .skill .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .skill p {
+            color: #999;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        /* ===== PROCESS ===== */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .step {
+            padding: 30px;
+            border-left: 3px solid #8b5cf6;
+            background: rgba(255,255,255,.04);
+        }
+
+        .number {
+            color: #22d3ee;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin: 12px 0;
+        }
+
+        .step p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        /* ===== CONTACT ===== */
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 45px;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                rgba(124,58,237,.15),
+                rgba(6,182,212,.08)
+            );
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        .contact-box p {
+            color: #aaa;
+            margin: 15px 0 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-item {
+            padding: 12px 18px;
+            background: rgba(255,255,255,.05);
+            border-radius: 20px;
+            color: #ccc;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            color: #666;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media(max-width: 750px) {
+
+            nav {
+                width: 94%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                text-align: center;
+                flex-direction: column-reverse;
+                padding-top: 130px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .photo-label {
+                right: -10px;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .section-title h2 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+    <div class="logo">CLARISSE'S PORTFOLIO</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            ✦ WELCOME TO CLARISSE'S PORTFOLIO
+        </div>
+
+        <h1>
+            Hi, I'm <span> Clarisse </span>.
+        </h1>
+
+        <p>
+            A passionate student, creative thinker, and aspiring
+            professional who loves turning ideas into meaningful
+            projects and designs.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn primary">
+                View My Work →
+            </a>
+
+            <a href="#contact" class="btn">
+                Contact Me
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- PUT YOUR OWN FACE HERE -->
+    <div class="profile-container">
+
+        <img
+            src="me.jpg.jpg"
+            alt="Owner's Photo"
+            class="profile"
+        >
+
+        <div class="photo-label">
+            👋 That's me!
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+        <small>01 — ABOUT ME</small>
+        <h2>More Than Just a Student</h2>
+        <p>A little story behind the work.</p>
+    </div>
+
+    <div class="about">
+
+        <p>
+            <strong>Hello!</strong> I'm <strong> Clarisse Paz </strong>,
+            a student who enjoys learning new things, creating
+            projects, and improving my skills through experience.
+            This portfolio represents not only my finished work,
+            but also the effort, creativity, and lessons I gained
+            throughout my journey.
+        </p>
+
+        <br>
+
+        <p>
+            My goal is to continue developing my skills while
+            discovering new ways to express ideas through
+            technology, creativity, and design.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOBBIES & INTERESTS ================= -->
+
+<section id="hobbies">
+
+    <div class="section-title">
+        <small>01.5 — HOBBIES & INTERESTS</small>
+        <h2>What I Love</h2>
+        <p>My passions, hobbies, and dream destinations.</p>
+    </div>
+
+    <div class="hobbies-container">
+
+        <div class="hobbies-photo">
+            <img src="passion and interest.jpg" alt="Clarisse - Passions and Interests">
+        </div>
+
+        <div class="hobbies-content">
+
+            <div class="hobby-box">
+                <h3>🎯 MY HOBBIES</h3>
+                <div class="hobby-list">
+                    <div class="hobby-item">Cleaning & organizing spaces</div>
+                    <div class="hobby-item">Writing stories & journaling</div>
+                    <div class="hobby-item">Cooking & trying new recipes</div>
+                    <div class="hobby-item">Eating & tasting different cuisines</div>
+                </div>
+            </div>
+
+            <div class="favorite-box">
+                <h3>🌍 FAVORITE PLACES TO VISIT</h3>
+                <div class="favorite-list">
+                    <div class="favorite-item">Korea - K-pop culture & fashion</div>
+                    <div class="favorite-item">Japan - Art, nature & tradition</div>
+                    <div class="favorite-item">Places with 4 Seasons - Cherry blossoms, autumn leaves & snow</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="section-title">
+        <small>02 — PROJECT SHOWCASE</small>
+        <h2>Featured Projects</h2>
+        <p>Some of the work I'm proud of.</p>
+    </div>
+
+
+    <div class="projects">
+
+        <!-- PROJECT 1 -->
+
+        <a class="project" href="../../CSS/asset/index.html">
+
+            <img
+                src="webbdesign.jpg.jpg"
+                alt="Web Design Project"
+            >
+
+            <div class="project-content">
+
+                <h3>🌐 Web Design Project</h3>
+
+                <p>
+                    A creative website project focused on
+                    clean layouts, attractive visuals,
+                    and user-friendly navigation.
+                </p>
+
+                <span class="tag">
+                    HTML • CSS • Design
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- PROJECT 2 -->
+
+        <a class="project" href="../../activities/IT'S%20ME!.html">
+
+            <img
+                src="pangalawa.jpg.jpg"
+                alt="Creative Design Project"
+            >
+
+            <div class="project-content">
+
+                <h3>🎨 Creative Design</h3>
+
+                <p>
+                    A visual project created to communicate
+                    ideas through color, composition,
+                    typography, and creativity.
+                </p>
+
+                <span class="tag">
+                    Creativity • Visual Artss
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- PROJECT 3 -->
+
+        <a class="project" href="../TRAVELING/my%20travel%20web.html">
+
+            <img
+                src="pangatlo.jpg.jpg"
+                alt="School Project"
+            >
+
+            <div class="project-content">
+
+                <h3>📚 School Project</h3>
+
+                <p>
+                    A project that demonstrates research,
+                    teamwork, problem-solving, and
+                    presentation skills.
+                </p>
+
+                <span class="tag">
+                    Research • Teamwork
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- PROJECT 4 -->
+
+        <a class="project" href="../../activities/secondpage.html">
+
+            <img
+                src="apat.jpg.jpg"
+                alt="Personal Project"
+            >
+
+            <div class="project-content">
+
+                <h3>💡 Personal Project</h3>
+
+                <p>
+                    An independent project where I explored
+                    my interests and challenged myself
+                    to learn something new.
+                </p>
+
+                <span class="tag">
+                    Innovation • Learning
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <small>03 — MY SKILLS</small>
+
+        <h2>What I Can Do</h2>
+
+        <p>
+            Skills I continue to develop through practice.
+        </p>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill">
+            <div class="icon">💻</div>
+            <h3>Web Design</h3>
+            <p>Creating attractive and organized websites.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">🎨</div>
+            <h3>Creativity</h3>
+            <p>Turning ideas into unique visual concepts.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">🧠</div>
+            <h3>Problem Solving</h3>
+            <p>Finding practical solutions to challenges.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">🤝</div>
+            <h3>Teamwork</h3>
+            <p>Working and communicating effectively with others.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">✍️</div>
+            <h3>Communication</h3>
+            <p>Expressing ideas clearly and confidently.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">📱</div>
+            <h3>Digital Skills</h3>
+            <p>Using technology to create meaningful work.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section id="process">
+
+    <div class="section-title">
+
+        <small>04 — MY PROCESS</small>
+
+        <h2>How I Create</h2>
+
+        <p>
+            Every good project starts with an idea.
+        </p>
+
+    </div>
+
+
+    <div class="process">
+
+        <div class="step">
+
+            <div class="number">01</div>
+
+            <h3>Discover</h3>
+
+            <p>
+                I understand the problem, goal, and
+                requirements of the project.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">02</div>
+
+            <h3>Plan</h3>
+
+            <p>
+                I organize my ideas and decide how
+                the project should look and work.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">03</div>
+
+            <h3>Create</h3>
+
+            <p>
+                I turn my plan into an actual project
+                using creativity and technical skills.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">04</div>
+
+            <h3>Improve</h3>
+
+            <p>
+                I review my work, fix problems, and
+                improve the final result.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <small>05 — LET'S CONNECT</small>
+
+        <h2>Get In Touch</h2>
+
+        <p>
+            I'd love to hear from you!
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h2>Have a project or question?</h2>
+
+        <p>
+            Feel free to reach out through my contact
+            information below.
+        </p>
+
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+                📧 clarissecpaz@email.com
+            </div>
+
+            <div class="contact-item">
+                📱 +63 951 063 6057
+            </div>
+
+            <div class="contact-item">
+                📍 Philippines
+            </div>
+
+        </div>
+
+        <br>
+
+        <a
+            href="mailto:clarissecpaz@email.com"
+            class="btn primary"
+        >
+            Send Me a Message ✉
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Clarisse Paz • Designed with creativity & effort ✦
+    </p>
+
+</footer>
+
+
+</body>
+</html>
