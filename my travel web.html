@@ -1,0 +1,3310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Dream Travel Guide</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   SOFT FOUR-SEASON COLOR PALETTE
+===================================================== */
+
+:root{
+
+    --cream:#dddddc;
+    --paper:#c2b594;
+
+    --sage:#9caf9e;
+    --soft-blue:#8daab5;
+
+    --deep-blue:#7d8a8f;
+
+    --brown:#c1a688;
+
+    --warm:#af946a;
+
+    --pink:#e08bac;
+
+    --text:#0d1a1f;
+
+    --white:#ffffff;
+
+    --shadow:
+        0 15px 40px rgba(41,66,75,.12);
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    font-family:"DM Sans",sans-serif;
+
+    background:var(--cream);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(255,253,248,.94);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(41,66,75,.08);
+
+}
+
+
+.nav-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:16px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.logo{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:27px;
+
+    font-weight:700;
+
+    color:var(--deep-blue);
+
+}
+
+
+.logo span{
+
+    color:var(--warm);
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    gap:23px;
+
+    list-style:none;
+
+}
+
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:var(--deep-blue);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.nav-links a:hover{
+
+    color:var(--warm);
+
+}
+
+
+.menu-btn{
+
+    display:none;
+
+    font-size:27px;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:120px 25px 80px;
+
+
+    /*
+       Main background is a soft natural
+       South Korea travel photograph.
+    */
+
+    background:
+
+        linear-gradient(
+            rgba(35,58,65,.35),
+            rgba(35,58,65,.65)
+        ),
+
+        url("https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?auto=format&fit=crop&w=2000&q=90")
+
+        center/cover fixed;
+
+}
+
+
+.hero-content{
+
+    max-width:900px;
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+
+.hero-small{
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+.hero h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(55px,9vw,105px);
+
+    line-height:1;
+
+    margin:25px 0;
+
+}
+
+
+.hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:19px;
+
+}
+
+
+.hero-buttons{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border-radius:50px;
+
+    background:var(--warm);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+.btn-outline{
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid white;
+
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+section{
+
+    padding:100px 7%;
+
+}
+
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:55px;
+
+}
+
+
+.section-heading span{
+
+    color:var(--warm);
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+
+    font-size:13px;
+
+}
+
+
+.section-heading h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(36px,5vw,52px);
+
+    color:var(--deep-blue);
+
+    margin-top:8px;
+
+}
+
+
+.section-heading p{
+
+    max-width:680px;
+
+    margin:12px auto 0;
+
+    color:#657278;
+
+}
+
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.introduction{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+.introduction img{
+
+    width:100%;
+
+    height:480px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.intro-text h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:43px;
+
+    color:var(--deep-blue);
+
+    margin-bottom:18px;
+
+}
+
+
+.meaning{
+
+    margin-top:25px;
+
+    padding:22px;
+
+    background:var(--paper);
+
+    border-left:5px solid var(--warm);
+
+    border-radius:12px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+/* =====================================================
+   DESTINATIONS
+===================================================== */
+
+.destinations{
+
+    background:#eaf0eb;
+
+}
+
+
+.search-box{
+
+    max-width:650px;
+
+    margin:0 auto 45px;
+
+}
+
+
+.search-box input{
+
+    width:100%;
+
+    padding:17px 25px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+    font-size:16px;
+
+}
+
+
+.destination-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+.destination-card{
+
+    background:white;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+
+.destination-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+.destination-image{
+
+    height:260px;
+
+    overflow:hidden;
+
+}
+
+
+.destination-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+.destination-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+.destination-info{
+
+    padding:25px;
+
+}
+
+
+.destination-info span{
+
+    color:var(--warm);
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+}
+
+
+.destination-info h3{
+
+    font-family:"Playfair Display",serif;
+
+    color:var(--deep-blue);
+
+    font-size:29px;
+
+    margin:5px 0;
+
+}
+
+
+.learn{
+
+    margin-top:12px;
+
+    color:var(--soft-blue);
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   FEATURED SOUTH KOREA
+===================================================== */
+
+.korea-feature{
+
+    background:
+
+        linear-gradient(
+            rgba(247,244,236,.88),
+            rgba(247,244,236,.88)
+        ),
+
+        url("https://images.unsplash.com/photo-1538485399081-7c8970b7d6c4?auto=format&fit=crop&w=1600&q=85")
+
+        center/cover fixed;
+
+}
+
+
+.korea-box{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:50px;
+
+    align-items:center;
+
+}
+
+
+.korea-box img{
+
+    width:100%;
+
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.korea-text h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:50px;
+
+    color:var(--deep-blue);
+
+}
+
+
+.korea-text p{
+
+    margin:15px 0;
+
+}
+
+
+.korea-points{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+
+.point{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+
+}
+
+
+/* =====================================================
+   FOUR SEASONS
+===================================================== */
+
+.seasons{
+
+    background:var(--paper);
+
+}
+
+
+.season-grid{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+.season{
+
+    position:relative;
+
+    min-height:350px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.season img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+.season:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+.season-overlay{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:25px;
+
+    color:white;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.72)
+    );
+
+}
+
+
+.season-overlay h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:27px;
+
+}
+
+
+.season-overlay p{
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   ITINERARY
+===================================================== */
+
+.itinerary{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+.timeline{
+
+    display:grid;
+
+    grid-template-columns:85px 1fr;
+
+    gap:20px;
+
+    margin-bottom:22px;
+
+}
+
+
+.day{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:var(--deep-blue);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+
+.timeline-content{
+
+    background:white;
+
+    padding:23px 27px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.timeline-content h3{
+
+    font-family:"Playfair Display",serif;
+
+    color:var(--deep-blue);
+
+    font-size:25px;
+
+}
+
+
+/* =====================================================
+   CULTURE
+===================================================== */
+
+.culture{
+
+    background:var(--deep-blue);
+
+    color:white;
+
+}
+
+
+.culture .section-heading h2{
+
+    color:white;
+
+}
+
+
+.culture .section-heading p{
+
+    color:#d6e0e2;
+
+}
+
+
+.culture-grid{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+
+.culture-card{
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:20px;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+
+.culture-card:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+
+.culture-icon{
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+
+/* =====================================================
+   PHOTO GALLERY
+===================================================== */
+
+.gallery-section{
+
+    background:#e9efeb;
+
+}
+
+
+.gallery{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    grid-auto-rows:230px;
+
+    gap:18px;
+
+}
+
+
+.gallery-item{
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+}
+
+
+.gallery-item img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+.gallery-item:hover img{
+
+    transform:scale(1.06);
+
+}
+
+
+.gallery-item.tall{
+
+    grid-row:span 2;
+
+}
+
+
+/* =====================================================
+   MAP
+===================================================== */
+
+.map-section{
+
+    background:#f3efe5;
+
+}
+
+
+.map{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.map iframe{
+
+    width:100%;
+
+    height:450px;
+
+    border:none;
+
+}
+
+
+/* =====================================================
+   TRAVEL TIPS
+===================================================== */
+
+.tips{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+.tip{
+
+    background:white;
+
+    padding:27px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+
+.tip:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+.tip h3{
+
+    color:var(--deep-blue);
+
+    margin-bottom:5px;
+
+}
+
+
+/* =====================================================
+   CREATOR
+===================================================== */
+
+.creator{
+
+    background:var(--paper);
+
+}
+
+
+.creator-box{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:280px 1fr;
+
+    gap:50px;
+
+    align-items:center;
+
+}
+
+
+.creator-photo{
+
+    width:270px;
+
+    height:270px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:9px solid white;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.creator-text h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:42px;
+
+    color:var(--deep-blue);
+
+}
+
+
+/* =====================================================
+   MODAL / POP-UP
+===================================================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:3000;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(25,40,45,.72);
+
+    backdrop-filter:blur(7px);
+
+    padding:30px;
+
+    overflow:auto;
+
+}
+
+
+.modal-content{
+
+    max-width:750px;
+
+    margin:6vh auto;
+
+    background:var(--paper);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.3);
+
+    animation:modalOpen .35s ease;
+
+}
+
+
+.modal-image{
+
+    width:100%;
+
+    height:330px;
+
+    object-fit:cover;
+
+}
+
+
+.modal-body{
+
+    padding:30px;
+
+}
+
+
+.modal-body h2{
+
+    font-family:"Playfair Display",serif;
+
+    color:var(--deep-blue);
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+
+.modal-body h4{
+
+    color:var(--warm);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    margin-top:15px;
+
+}
+
+
+.close{
+
+    position:absolute;
+
+    right:30px;
+
+    top:20px;
+
+    color:white;
+
+    font-size:40px;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#19333c;
+
+    color:white;
+
+    text-align:center;
+
+    padding:55px 20px;
+
+}
+
+
+footer h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:35px;
+
+}
+
+
+footer span{
+
+    color:var(--warm);
+
+}
+
+
+footer p{
+
+    margin-top:8px;
+
+    color:#ccd7da;
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+@keyframes modalOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px) scale(.97);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media(max-width:900px){
+
+    .nav-links{
+
+        position:absolute;
+
+        top:70px;
+
+        left:0;
+
+        width:100%;
+
+        background:var(--paper);
+
+        display:none;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:25px;
+
+    }
+
+
+    .nav-links.active{
+
+        display:flex;
+
+    }
+
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+
+    .introduction,
+    .korea-box,
+    .creator-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .destination-grid,
+    .culture-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .season-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .creator-box{
+
+        text-align:center;
+
+    }
+
+
+    .creator-photo{
+
+        margin:auto;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    section{
+
+        padding:75px 5%;
+
+    }
+
+
+    .hero h1{
+
+        font-size:53px;
+
+    }
+
+
+    .destination-grid,
+    .culture-grid,
+    .season-grid,
+    .tips{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .gallery{
+
+        grid-template-columns:1fr;
+
+        grid-auto-rows:230px;
+
+    }
+
+
+    .gallery-item.tall{
+
+        grid-row:span 1;
+
+    }
+
+
+    .timeline{
+
+        grid-template-columns:60px 1fr;
+
+    }
+
+
+    .day{
+
+        width:55px;
+
+        height:55px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+<div class="nav-container">
+
+<div class="logo">
+
+Clarisse<span>Travel Website</span>
+
+</div>
+
+
+<div class="menu-btn" onclick="toggleMenu()">
+
+☰
+
+</div>
+
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#destinations">Destinations</a></li>
+
+<li><a href="#korea">South Korea</a></li>
+
+<li><a href="#seasons">Seasons</a></li>
+
+<li><a href="#itinerary">Itinerary</a></li>
+
+<li><a href="#culture">Culture</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#map">Map</a></li>
+
+<li><a href="#creator">Creator</a></li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-small">
+
+Travel • Seasons • Memories
+
+</div>
+
+
+<h1>
+
+My Four<br>
+
+Season Journey
+
+</h1>
+
+
+<p>
+
+Discover beautiful destinations where every season
+has something special to offer — with South Korea
+as the destination closest to my heart.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#destinations" class="btn">
+
+Explore Destinations ↓
+
+</a>
+
+
+<a href="#seasons" class="btn btn-outline">
+
+Discover the Seasons
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="section-heading">
+
+<span>01 • My Travel Inspiration</span>
+
+<h2>Why I Love Four Seasons</h2>
+
+<p>
+
+Some places become even more beautiful because they
+change throughout the yearr.
+
+</p>
+
+</div>
+
+
+<div class="introduction">
+
+
+<img
+src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1000&q=85"
+alt="Beautiful four season travel landscape"
+>
+
+
+<div class="intro-text">
+
+<h2>
+
+Every Season Has Its Own Story
+
+</h2>
+
+
+<p>
+
+I love destinations that experience four distinct
+seasons because the same place can feel completely
+different throughout the year.
+
+</p>
+
+
+<p>
+
+Spring brings flowers, summer brings vibrant
+landscapes, autumn creates warm colors, and winter
+turns the scenery into something peaceful and magical.
+
+</p>
+
+
+<div class="meaning">
+
+<strong>✦ What This Website Means</strong>
+
+<p>
+
+This travel guide represents my love for exploring
+countries where nature, culture, food, and scenery
+change beautifully with the seasons.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DESTINATIONS
+===================================================== -->
+
+<section class="destinations" id="destinations">
+
+<div class="section-heading">
+
+<span>02 • Dream Destinations</span>
+
+<h2>Places I Want to Explore</h2>
+
+<p>
+
+Click any destination to discover its meaning,
+special experiences, and the season that makes it shine.
+
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<input
+id="search"
+type="text"
+placeholder="🔎 Search Korea, Japan, Canada..."
+onkeyup="searchPlaces()"
+>
+
+</div>
+
+
+<div class="destination-grid" id="destinationGrid">
+
+
+<!-- SOUTH KOREA -->
+
+<div
+class="destination-card"
+onclick="openModal(
+'South Korea',
+'https://media.nomadicmatt.com/2022/koreaguide1.jpg?auto=format&fit=crop&w=1200&q=90',
+'SOUTH KOREA • FAVORITE DESTINATION',
+'South Korea is my featured destination because it combines modern cities, historic places, beautiful nature, delicious food, and four distinct seasons.',
+'Spring and Autumn',
+'Explore Seoul, visit traditional palaces, enjoy Korean food, experience seasonal scenery, and discover the peaceful beauty of places beyond the city.'
+)"
+>
+
+<div class="destination-image">
+
+<img
+src="https://media.nomadicmatt.com/2022/koreaguide1.jpg?auto=format&fit=crop&w=900&q=85"
+alt="South Korea"
+>
+
+</div>
+
+
+<div class="destination-info">
+
+<span>MY FAVORITE</span>
+
+<h3>🇰🇷 South Korea</h3>
+
+<p>
+
+A perfect combination of tradition,
+modern life, nature, and four seasons.
+
+</p>
+
+<div class="learn">
+
+Click to discover → 
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- JAPAN -->
+
+<div
+class="destination-card"
+onclick="openModal(
+'Japan',
+'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=90',
+'JAPAN • CULTURE & NATURE',
+'Japan is famous for its combination of traditional culture, modern cities, beautiful gardens, temples, and seasonal landscapes.',
+'Spring and Autumn',
+'See cherry blossoms, explore temples, experience Japanese food, visit peaceful gardens, and enjoy colorful autumn scenery.'
+)"
+>
+
+<div class="destination-image">
+
+<img
+src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=85"
+alt="Japan temple and nature"
+>
+
+</div>
+
+
+<div class="destination-info">
+
+<span>CULTURE & NATURE</span>
+
+<h3>🇯🇵 Japan</h3>
+
+<p>
+
+A beautiful mixture of ancient traditions,
+technology, nature, and seasonal beauty.
+
+</p>
+
+<div class="learn">
+
+Click to discover →
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CANADA -->
+
+<div
+class="destination-card"
+onclick="openModal(
+'Canada',
+'https://bam-cm-cldigipub-largefs.s3.amazonaws.com/cldigipub/wp-content/uploads/2019/12/shutterstock_1528990841.jpg?auto=format&fit=crop&w=1200&q=90',
+'CANADA • MOUNTAINS & NATURE',
+'Canada is a dream destination for people who love mountains, forests, lakes, and dramatic seasonal changes.',
+'Summer and Autumn',
+'Explore national parks, see colorful autumn forests, visit lakes, and experience beautiful snowy winter landscapes.'
+)"
+>
+
+<div class="destination-image">
+
+<img
+src="https://bam-cm-cldigipub-largefs.s3.amazonaws.com/cldigipub/wp-content/uploads/2019/12/shutterstock_1528990841.jpg?auto=format&fit=crop&w=900&q=85"
+alt="Canada mountain landscape"
+>
+
+</div>
+
+
+<div class="destination-info">
+
+<span>MOUNTAINS & NATURE</span>
+
+<h3>🇨🇦 Canada</h3>
+
+<p>
+
+Known for breathtaking mountains, forests,
+lakes, and snowy winters.
+
+</p>
+
+<div class="learn">
+
+Click to discover →
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SWITZERLAND -->
+
+<div
+class="destination-card"
+onclick="openModal(
+'Switzerland',
+'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=90',
+'SWITZERLAND • ALPINE BEAUTY',
+'Switzerland is famous for its Alps, peaceful villages, clear lakes, and beautiful seasonal scenery.',
+'Winter and Summer',
+'Visit mountain towns, ride scenic trains, explore alpine landscapes, and enjoy snowy winter scenery.'
+)"
+>
+
+<div class="destination-image">
+
+<img
+src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=900&q=85"
+alt="Swiss Alps"
+>
+
+</div>
+
+
+<div class="destination-info">
+
+<span>ALPINE BEAUTY</span>
+
+<h3>🇨🇭 Switzerland</h3>
+
+<p>
+
+A peaceful destination filled with mountains,
+lakes, villages, and winter scenery.
+
+</p>
+
+<div class="learn">
+
+Click to discover →
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- FRANCE -->
+
+<div
+class="destination-card"
+onclick="openModal(
+'France',
+'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=90',
+'FRANCE • HISTORY & CITY LIFE',
+'France offers historic architecture, art, food, beautiful countryside, and famous cities that look different throughout the year.',
+'Spring and Autumn',
+'Explore Paris, visit museums, discover historic streets, enjoy French food, and experience colorful seasonal scenery.'
+)"
+>
+
+<div class="destination-image">
+
+<img
+src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=85"
+alt="Paris France"
+>
+
+</div>
+
+
+<div class="destination-info">
+
+<span>HISTORY & CITY LIFE</span>
+
+<h3>🇫🇷 France</h3>
+
+<p>
+
+A destination filled with art, architecture,
+food, history, and beautiful cities.
+
+</p>
+
+<div class="learn">
+
+Click to discover →
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- NEW ZEALAND -->
+
+<div
+class="destination-card"
+onclick="openModal(
+'New Zealand',
+'https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1200&q=90',
+'NEW ZEALAND • ADVENTURE',
+'New Zealand is known for dramatic mountains, green landscapes, lakes, coastlines, and outdoor adventures.',
+'Summer and Autumn',
+'Explore mountains, lakes, hiking trails, scenic viewpoints, and peaceful natural landscapes.'
+)"
+>
+
+<div class="destination-image">
+
+<img
+src="https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=900&q=85"
+alt="New Zealand landscape"
+>
+
+</div>
+
+
+<div class="destination-info">
+
+<span>ADVENTURE</span>
+
+<h3>🇳🇿 New Zealand</h3>
+
+<p>
+
+A beautiful destination for nature lovers
+and outdoor adventures.
+
+</p>
+
+<div class="learn">
+
+Click to discover →
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOUTH KOREA FEATURE
+===================================================== -->
+
+<section class="korea-feature" id="korea">
+
+<div class="section-heading">
+
+<span>03 • Featured Destination</span>
+
+<h2>Why South Korea?</h2>
+
+</div>
+
+
+<div class="korea-box">
+
+
+<img
+src="https://d2vbr83hnyiux1.cloudfront.net/image/975050285728/image_bsvvr1lf7156r96oepq8su5534"
+alt="South Korea travel"
+>
+
+
+<div class="korea-text">
+
+<h2>
+
+A Place I Would Love to Experience
+
+</h2>
+
+
+<p>
+
+South Korea stands out because it has a unique
+balance between its rich history and modern lifestyle.
+
+</p>
+
+
+<p>
+
+You can visit historic palaces in the morning,
+walk through modern city streets in the afternoon,
+and enjoy beautiful seasonal scenery later in the day.
+
+</p>
+
+
+<div class="korea-points">
+
+<div class="point">
+
+🇰🇷 <strong>Culture</strong>
+
+<br>
+
+History & traditions
+
+</div>
+
+
+<div class="point">
+
+🍜 <strong>Food</strong>
+
+<br>
+
+Korean cuisine
+
+</div>
+
+
+<div class="point">
+
+🌸 <strong>Spring</strong>
+
+<br>
+
+Flowers & blossoms
+
+</div>
+
+
+<div class="point">
+
+🍁 <strong>Autumn</strong>
+
+<br>
+
+Colorful leaves
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOUR SEASONS
+===================================================== -->
+
+<section class="seasons" id="seasons">
+
+<div class="section-heading">
+
+<span>04 • Four Seasons</span>
+
+<h2>Which Season Is Calling You?</h2>
+
+<p>
+
+Each season gives travelers a completely different
+experience.
+
+</p>
+
+</div>
+
+
+<div class="season-grid">
+
+
+<div
+class="season"
+onclick="openModal(
+'Spring',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz-75P8mSkSdvlnNfJ0fxZHjoYcLLGTaXuCjoEODRGvA&s=10',
+'SPRING • NEW BEGINNINGS',
+'Spring represents new beginnings, fresh colors, blooming flowers, and pleasant outdoor adventures.',
+'South Korea, Japan, France',
+'Perfect for flower viewing, photography, walking around cities, and exploring gardens.'
+)"
+>
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz-75P8mSkSdvlnNfJ0fxZHjoYcLLGTaXuCjoEODRGvA&s=10"
+alt="Spring flowers"
+>
+
+
+<div class="season-overlay">
+
+<h3>🌸 Spring</h3>
+
+<p>
+
+Flowers • Fresh Air • New Beginnings
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div
+class="season"
+onclick="openModal(
+'Summer',
+'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=90',
+'SUMMER • ADVENTURE',
+'Summer brings longer days, green landscapes, outdoor activities, beaches, and exciting adventures.',
+'Canada, Switzerland, New Zealand',
+'Perfect for hiking, sightseeing, exploring nature, and enjoying outdoor activities.'
+)"
+>
+
+<img
+src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"
+alt="Summer beach"
+>
+
+
+<div class="season-overlay">
+
+<h3>☀️ Summer</h3>
+
+<p>
+
+Adventure • Sunshine • Nature
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div
+class="season"
+onclick="openModal(
+'Autumn',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQamYI3CssLPptVPL_xoa1Kos26UVwcR0tH9zqAf5VHCw&s=10',
+'AUTUMN • COLORFUL MOMENTS',
+'Autumn transforms landscapes with warm shades of yellow, orange, red, and brown.',
+'South Korea, Japan, Canada',
+'Perfect for photography, scenic walks, mountain trips, and enjoying peaceful landscapes.'
+)"
+>
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQamYI3CssLPptVPL_xoa1Kos26UVwcR0tH9zqAf5VHCw&s=10"
+alt="Autumn forest"
+>
+
+
+<div class="season-overlay">
+
+<h3>🍁 Autumn</h3>
+
+<p>
+
+Color • Cozy Weather • Beautiful Views
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div
+class="season"
+onclick="openModal(
+'Winter',
+'https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=1200&q=90',
+'WINTER • QUIET BEAUTY',
+'Winter creates peaceful snowy landscapes, cozy experiences, and a completely different atmosphere.',
+'South Korea, Japan, Switzerland, Canada',
+'Perfect for enjoying snow, winter scenery, cozy cafés, and seasonal activities.'
+)"
+>
+
+<img
+src="https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=900&q=85"
+alt="Winter snowy landscape"
+>
+
+
+<div class="season-overlay">
+
+<h3>❄️ Winter</h3>
+
+<p>
+
+Snow • Cozy Days • Peaceful Scenery
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ITINERARY
+===================================================== -->
+
+<section id="itinerary">
+
+<div class="section-heading">
+
+<span>05 • Sample Plan</span>
+
+<h2>My Dream Korea Trip</h2>
+
+<p>
+
+A simple seven-day itinerary combining culture,
+city life, food, nature, and seasonal scenery.
+
+</p>
+
+</div>
+
+
+<div class="itinerary">
+
+
+<div class="timeline">
+
+<div class="day">DAY<br>1</div>
+
+<div class="timeline-content">
+
+<h3>✈️ Arrival in Seoul</h3>
+
+<p>
+
+Arrive in Seoul, settle in, explore the nearby
+area, and enjoy your first Korean meal.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="day">DAY<br>2</div>
+
+<div class="timeline-content">
+
+<h3>🏯 Korean History</h3>
+
+<p>
+
+Visit a palace and explore traditional areas
+to learn more about Korean history.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="day">DAY<br>3</div>
+
+<div class="timeline-content">
+
+<h3>☕ Modern Seoul</h3>
+
+<p>
+
+Explore cafés, shopping areas, city streets,
+and modern Korean culture.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="day">DAY<br>4</div>
+
+<div class="timeline-content">
+
+<h3>🚄 Travel to Busan</h3>
+
+<p>
+
+Travel south and experience a different side
+of Korea near the coast.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="day">DAY<br>5</div>
+
+<div class="timeline-content">
+
+<h3>🌊 Busan Adventure</h3>
+
+<p>
+
+Explore coastal scenery, markets, neighborhoods,
+and local food.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="day">DAY<br>6</div>
+
+<div class="timeline-content">
+
+<h3>🍁 Seasonal Nature</h3>
+
+<p>
+
+Spend the day enjoying nature and taking
+photographs of the seasonal scenery.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="day">DAY<br>7</div>
+
+<div class="timeline-content">
+
+<h3>📸 Final Memories</h3>
+
+<p>
+
+Buy souvenirs, enjoy one final Korean meal,
+take photographs, and prepare for home.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CULTURE
+===================================================== -->
+
+<section class="culture" id="culture">
+
+<div class="section-heading">
+
+<span>06 • Experience</span>
+
+<h2>Korean Culture</h2>
+
+<p>
+
+A trip becomes more meaningful when we understand
+and respect the culture of the place we visit.
+
+</p>
+
+</div>
+
+
+<div class="culture-grid">
+
+
+<div
+class="culture-card"
+onclick="openModal(
+'Korean Food',
+'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=90',
+'KOREAN FOOD',
+'Food is an important part of experiencing a new culture. Korean cuisine includes many flavorful dishes and shared meals.',
+'Try local dishes responsibly and respectfully.',
+'Explore Korean food such as bibimbap, bulgogi, japchae, and other local specialties.'
+)"
+>
+
+<div class="culture-icon">🍜</div>
+
+<h3>Korean Food</h3>
+
+<p>Discover flavors and traditional dishes.</p>
+
+</div>
+
+
+
+<div
+class="culture-card"
+onclick="openModal(
+'Hanbok',
+'https://images.unsplash.com/photo-1598662779094-110c2bad80b5?auto=format&fit=crop&w=1200&q=90',
+'HANBOK',
+'The hanbok is traditional Korean clothing recognized for its elegant shapes and colorful appearance.',
+'Traditional clothing represents Korean cultural heritage.',
+'Learn about the history of the hanbok and appreciate it respectfully when visiting cultural locations.'
+)"
+>
+
+<div class="culture-icon">👘</div>
+
+<h3>Hanbok</h3>
+
+<p>Traditional Korean clothing and heritage.</p>
+
+</div>
+
+
+
+<div
+class="culture-card"
+onclick="openModal(
+'K-Pop',
+'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=1200&q=90',
+'K-POP',
+'K-Pop is a major part of modern Korean popular culture and has gained fans around the world.',
+'Music can connect people and cultures.',
+'Discover Korean music and learn about the creative culture surrounding it.'
+)"
+>
+
+<div class="culture-icon">🎵</div>
+
+<h3>K-Pop</h3>
+
+<p>Modern music and global Korean culture.</p>
+
+</div>
+
+
+
+<div
+class="culture-card"
+onclick="openModal(
+'Palaces',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsmEChm0Xvq67INZn-U1Uf8CMZjFYPkReVhrTg816c-g&s=1024',
+'PALACES',
+'Historic palaces provide a glimpse into Korea’s past and traditional architecture.',
+'History helps travelers understand a destination.',
+'Visit historic sites respectfully and learn about their importance.'
+)"
+>
+
+<div class="culture-icon">🏯</div>
+
+<h3>Palaces</h3>
+
+<p>Explore Korean history and architecture.</p>
+
+</div>
+
+
+
+<div
+class="culture-card"
+onclick="openModal(
+'Cafe Culture',
+'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=90',
+'CAFE CULTURE',
+'Korean cities are known for creative cafés and unique spaces where people can relax and spend time together.',
+'Everyday spaces can become part of a travel experience.',
+'Explore cafés respectfully and enjoy the atmosphere.'
+)"
+>
+
+<div class="culture-icon">☕</div>
+
+<h3>Café Culture</h3>
+
+<p>Relax, explore, and discover unique cafés.</p>
+
+</div>
+
+
+
+<div
+class="culture-card"
+onclick="openModal(
+'Bayanihan & Respect',
+'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=90',
+'TRAVEL WITH RESPECT',
+'Being respectful toward local people, places, traditions, and the environment makes travel more meaningful.',
+'Good travelers leave positive memories behind.',
+'Follow local rules, keep places clean, and treat people and cultures with respect.'
+)"
+>
+
+<div class="culture-icon">🤝</div>
+
+<h3>Respect</h3>
+
+<p>Travel responsibly and appreciate local culture.</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gallery-section" id="gallery">
+
+<div class="section-heading">
+
+<span>07 • Visual Journey</span>
+
+<h2>Postcard Moments</h2>
+
+<p>
+
+Click a photograph to see a larger version and
+learn what makes the scene special.
+
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div
+class="gallery-item tall"
+onclick="openModal(
+'Seoul',
+'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?auto=format&fit=crop&w=1400&q=90',
+'SEOUL',
+'Seoul represents the exciting combination of Korea’s modern city life and rich history.',
+'City • Culture • Modern Life',
+'Explore the city while also taking time to discover its traditional side.'
+)"
+>
+
+<img
+src="https://travelthru.com/cdn-cgi/imagedelivery/wZpbJM3t8iED5kIISxeUgQ/cdb0af77-40af-43ac-eab9-a4023b62e500/public"
+alt="Seoul"
+>
+
+</div>
+
+
+<div
+class="gallery-item"
+onclick="openModal(
+'Korean Nature',
+'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/e6/33/ce/cheonggyecheon.jpg?w=500&h=500&s=1',
+'KOREAN NATURE',
+'Korea’s natural landscapes become especially beautiful during spring and autumn.',
+'Nature • Seasons',
+'Take time to appreciate the scenery rather than rushing from one attraction to another.'
+)"
+>
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoltIG718DC0VLV-5xhNwsM5p6BDeM7UhJnf0Ous2rDkZmAkHNkU-C6y4&s=1024"
+alt="Korean nature"
+>
+
+</div>
+
+
+<div
+class="gallery-item"
+onclick="openModal(
+'Japan',
+'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=90',
+'JAPAN',
+'Japan is another favorite four-season destination with beautiful temples, gardens, and seasonal scenery.',
+'Culture • Nature • Seasons',
+'Visit during different seasons to experience how dramatically the scenery can change.'
+)"
+>
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaqtPZwNDravmx95tCIQmnOPvn3HUyER2ItPqo5PA4HA&s=1024"
+alt="Japan"
+>
+
+</div>
+
+
+<div
+class="gallery-item"
+onclick="openModal(
+'Canada',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhl2hEyyN-36mN0CG9NNxWnHes2c-nY-VGgpStryM8x0a_Hh4VIrDwqB4&s=1024',
+'CANADA',
+'Canada is a great destination for travelers who love mountains, lakes, forests, and dramatic seasonal changes.',
+'Nature • Mountains • Adventure',
+'Explore the outdoors and enjoy the scenery in different seasons.'
+)"
+>
+
+<img
+src="https://content.skyscnr.com/m/17facff22bc5efda/original/GettyImages-138160482_doc.jpg?resize=1224%3Aauto"
+alt="Canada"
+>
+
+</div>
+
+
+<div
+class="gallery-item tall"
+onclick="openModal(
+'Switzerland',
+'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1400&q=90',
+'SWITZERLAND',
+'Switzerland represents peaceful mountain landscapes, beautiful villages, and a strong connection with nature.',
+'Mountains • Lakes • Winter',
+'Enjoy scenic views and discover the beauty of the Alps.'
+)"
+>
+
+<img
+src="https://i.natgeofe.com/n/add5cc43-eda9-4feb-b53f-e11ddf2c4665/gettyimages-1175707040_web.jpg"
+alt="Switzerland"
+>
+
+</div>
+
+
+<div
+class="gallery-item"
+onclick="openModal(
+'Four Seasons',
+'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=90',
+'FOUR SEASONS',
+'The changing colors of nature are one of the biggest reasons I love four-season countries.',
+'Spring • Summer • Autumn • Winter',
+'Every season provides a different reason to return.'
+)"
+>
+
+<img
+src="https://media.istockphoto.com/id/484270482/photo/autumn-in-vermont.jpg?s=612x612&w=0&k=20&c=f0oafIa0w8WEhsqze2oBYqUQ1Fd-WOvn-8ZWukMuB6U="
+alt="Four seasons nature"
+>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAP
+===================================================== -->
+
+<section class="map-section" id="map">
+
+<div class="section-heading">
+
+<span>08 • Navigate</span>
+
+<h2>Where Are My Dream Destinations?</h2>
+
+<p>
+
+Use the map to explore South Korea and imagine
+where your next adventure could begin.
+
+</p>
+
+</div>
+
+
+<div class="map">
+
+<iframe
+
+src="https://www.google.com/maps?q=South%20Korea&output=embed"
+
+loading="lazy"
+
+title="South Korea map">
+
+</iframe>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRAVEL TIPS
+===================================================== -->
+
+<section id="tips">
+
+<div class="section-heading">
+
+<span>09 • Prepare</span>
+
+<h2>Travel Smart</h2>
+
+<p>
+
+Small preparations can make a big difference
+when exploring a new country.
+
+</p>
+
+</div>
+
+
+<div class="tips">
+
+
+<div class="tip">
+
+<h3>🎒 Pack According to the Season</h3>
+
+<p>
+
+Check the expected weather and bring clothing
+appropriate for the season.
+
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<h3>📱 Keep Important Information</h3>
+
+<p>
+
+Save important addresses, maps, emergency contacts,
+and travel information before leaving.
+
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<h3>💳 Plan Your Budget</h3>
+
+<p>
+
+Set aside money for transportation, food,
+accommodation, activities, and souvenirs.
+
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<h3>🌱 Protect Nature</h3>
+
+<p>
+
+Keep beautiful destinations clean and follow
+local environmental rules.
+
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<h3>🙏 Respect Local Culture</h3>
+
+<p>
+
+Learn basic customs and be respectful toward
+local people and cultural places.
+
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<h3>📸 Make Memories</h3>
+
+<p>
+
+Take pictures, but remember to put the camera
+down and enjoy the moment too.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CREATOR
+===================================================== -->
+
+<section class="creator" id="creator">
+
+<div class="section-heading">
+
+<span>10 • About My Project</span>
+
+<h2>The Person Behind the Guide</h2>
+
+</div>
+
+
+<div class="creator-box">
+
+
+<!--
+    REPLACE THE IMAGE BELOW WITH YOUR OWN PHOTO.
+
+    Example:
+
+    src="myphoto.jpg"
+
+-->
+
+<img
+
+class="creator-photo"
+
+src="mememe.jpg"
+
+alt="Photo of the website creator"
+
+
+>
+
+
+<div class="creator-text">
+
+<h2>
+
+Welcome to My Travel World 🌏
+
+</h2>
+
+
+<p>
+
+ Hi! I'm <strong> Clarisse Paz </strong> and I created this website because I am interested in
+countries that experience four beautiful seasons.
+
+</p>
+
+
+<p>
+
+South Korea is my featured destination because
+I would love to experience its culture, food,
+cities, nature, and seasonal scenery.
+
+</p>
+
+
+<div class="meaning">
+
+<strong>✦ My Travel Philosophy</strong>
+
+<p>
+
+"Travel is not only about seeing a new place.
+It is also about learning about its people,
+culture, nature, and way of life."
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div class="modal" id="modal">
+
+<span class="close" onclick="closeModal()">
+
+&times;
+
+</span>
+
+
+<div class="modal-content">
+
+
+<img
+id="modalImage"
+class="modal-image"
+src=""
+alt=""
+>
+
+
+<div class="modal-body">
+
+<h2 id="modalTitle"></h2>
+
+<h4 id="modalSubtitle"></h4>
+
+<p id="modalDescription"></p>
+
+<h4>Best Time</h4>
+
+<p id="modalSeason"></p>
+
+<h4>Travel Idea</h4>
+
+<p id="modalIdea"></p>
+
+<br>
+
+<button
+class="btn"
+onclick="closeModal()">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<h2>
+
+Four<span>Seasons</span>
+
+</h2>
+
+<p>
+
+Dream • Explore • Experience • Remember
+
+</p>
+
+<p>
+
+© 2026 Four Seasons Travel Guide | School Project
+
+</p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchPlaces(){
+
+    let search = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+
+    let cards = document
+        .querySelectorAll(".destination-card");
+
+
+    cards.forEach(function(card){
+
+        let text =
+            card.innerText.toLowerCase();
+
+
+        if(text.includes(search)){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+}
+
+
+
+/* =====================================================
+   OPEN MODAL
+===================================================== */
+
+function openModal(
+    title,
+    image,
+    subtitle,
+    description,
+    season,
+    idea
+){
+
+    document
+    .getElementById("modalTitle")
+    .innerText = title;
+
+
+    document
+    .getElementById("modalImage")
+    .src = image;
+
+
+    document
+    .getElementById("modalImage")
+    .alt = title;
+
+
+    document
+    .getElementById("modalSubtitle")
+    .innerText = subtitle;
+
+
+    document
+    .getElementById("modalDescription")
+    .innerText = description;
+
+
+    document
+    .getElementById("modalSeason")
+    .innerText = season;
+
+
+    document
+    .getElementById("modalIdea")
+    .innerText = idea;
+
+
+    document
+    .getElementById("modal")
+    .style.display = "block";
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+function closeModal(){
+
+    document
+    .getElementById("modal")
+    .style.display = "none";
+
+
+    document.body.style.overflow = "auto";
+
+}
+
+
+
+/* =====================================================
+   CLOSE MODAL BY CLICKING OUTSIDE
+===================================================== */
+
+window.onclick = function(event){
+
+    let modal =
+        document.getElementById("modal");
+
+
+    if(event.target === modal){
+
+        closeModal();
+
+    }
+
+}
+
+
+/* =====================================================
+   ESC KEY CLOSES MODAL
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
