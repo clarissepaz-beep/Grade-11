@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Chose IT</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #0f172a, #1e3a5f, #0f172a);
+        }
+
+        .hero {
+            max-width: 800px;
+        }
+
+        .icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 55px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #cbd5e1;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.08);
+            background: #7dd3fc;
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 10%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 35px;
+            color: #38bdf8;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+        }
+
+        .card span {
+            font-size: 45px;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+            color: #7dd3fc;
+        }
+
+        .card p {
+            color: #cbd5e1;
+        }
+
+        /* Quote */
+        .quote {
+            background: #172554;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .quote p {
+            font-size: 25px;
+            font-style: italic;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Future */
+        .future {
+            text-align: center;
+        }
+
+        .future-box {
+            max-width: 800px;
+            margin: auto;
+            background: #1e293b;
+            padding: 35px;
+            border-radius: 20px;
+            border-left: 5px solid #38bdf8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header>
+        <div class="hero">
+            <div class="icon">💻</div>
+
+            <h1>Why I Chose IT</h1>
+
+            <p class="subtitle">
+                Exploring technology, creativity, and endless possibilities.
+            </p>
+
+            <a href="#why" class="button">Discover My Reason</a>
+        </div>
+    </header>
+
+    <!-- INTRODUCTION -->
+    <section id="why">
+        <h2 class="title">Why Did I Choose IT?</h2>
+
+        <p class="about">
+            I chose Information Technology because I am interested in how
+            technology works and how it can be used to solve problems.
+            IT gives me the opportunity to learn new skills, be creative,
+            and build things that can be useful to other people.
+            I also believe that technology will continue to be an important
+            part of our future, so I want to be prepared for it.
+        </p>
+    </section>
+
+    <!-- REASONS -->
+    <section>
+        <h2 class="title">My Reasons</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <span>💡</span>
+                <h3>Creativity</h3>
+                <p>
+                    IT allows me to turn my ideas into websites,
+                    applications, designs, and other digital projects.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🧠</span>
+                <h3>Learning</h3>
+                <p>
+                    Technology gives me many opportunities to learn
+                    new skills and discover something different.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🔧</span>
+                <h3>Problem Solving</h3>
+                <p>
+                    I want to learn how to use technology to solve
+                    problems and make tasks easier.
+                </p>
+            </div>
+
+            <div class="card">
+                <span>🚀</span>
+                <h3>My Future</h3>
+                <p>
+                    IT can open many career opportunities and help
+                    me prepare for the future.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <div class="quote">
+        <p>
+            “I chose IT not because I know everything about technology,
+            but because I want to keep learning and discover what I can create.”
+        </p>
+    </div>
+
+    <!-- FUTURE -->
+    <section class="future">
+        <h2 class="title">My Goal in IT</h2>
+
+        <div class="future-box">
+            <p>
+                My goal is to improve my skills in programming, web design,
+                and other areas of technology. I want to become more confident
+                in creating digital projects and eventually use what I learn
+                to create something meaningful and helpful.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>💻 My IT Journey • Learning Today, Creating Tomorrow</p>
+    </footer>
+
+</body>
+</html>
